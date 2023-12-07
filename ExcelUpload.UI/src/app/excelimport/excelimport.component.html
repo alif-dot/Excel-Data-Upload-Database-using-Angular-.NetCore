@@ -1,0 +1,36 @@
+<div class="container">  
+    <br>  
+    <div class="row">  
+        <div class="col-md-6">  
+            <input class="form-control" type="file" #fileInput />  
+        </div>  
+        <div class="col-md-6">  
+            <button class="btn btn-primary" (click)="uploadFile();">Upload</button>  
+        </div>  
+    </div>  
+    <div>  
+        <h4 class="alert-success">{{message}}</h4>  
+    </div>  
+    <div>  
+        <table class="table">  
+            <tr class="btn-primary">  
+                <th>User Id</th>  
+                <th>UserName</th>  
+                <th>Email Id</th>  
+                <th>Gender</th>  
+                <th>Address</th>  
+                <th>MobileNo</th>  
+                <th>PinCode</th>  
+            </tr>  
+            <tr *ngFor="let user of allUsers | async">  
+                <td style="width: 100px">{{user.UserId}}</td>  
+                <td>{{user.UserName }}</td>  
+                <td>{{user.EmailId}}</td>  
+                <td>{{user.Gender}}</td>  
+                <td>{{user.Address}}</td>  
+                <td style="width: 200px">{{user.MobileNo}}</td>  
+                <td>{{user.PinCode}}</td>  
+            </tr>    
+        </table>  
+    </div>  
+</div>  
